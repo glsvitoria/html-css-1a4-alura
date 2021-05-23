@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    background-color: #BBBBBB;
+    padding: 20px 0;
+}
+
+.cabecalho {
+    width: 900px;
+    position: relative;
+    margin: 0 auto 0 auto;
+}
+
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0px;
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 15px;
+}
+
+nav a {
+    color: black;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: coral;
+}
+
+.produtos {
+    margin: 0 auto;
+    width: 940px;
+    padding: 50px 0;
+}
+
+.produtos li {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.produtos li:hover {
+    border: 2px solid rgb(190, 190, 0);
+}
+
+.produtos li:active {
+    border-color: green;
+}
+
+.produtos li:hover h2 {
+    font-size: 30px;
+}
+
+.produtos h2 {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.produto-descricao {
+    font-size: 18px;
+}
+
+.produto-preco {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    background: url(imagens/bg.jpg);
+    padding: 40px 0;
+}
+
+footer p {
+    color: white;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+/* css da página inicial */
+.banner {
+    width: 100%;
+}
+
+.titulo-principal {
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em;
+    clear: left; /*Para que o float não afete mais ele, ele desça*/
+}
+
+.principal {
+    padding: 3em 0;
+    background: #FEFEFE;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.principal p {
+    margin: 0 0 1em;
+}
+
+.principal strong {
+    font-weight: bold;
+}
+
+.principal em {
+    font-style: italic;
+}
+
+.utensilios {
+    width: 130px;
+    float: left;
+    margin: 0 20px;
+}
+
+.mapa {
+    padding: 3em 0;
+    background: linear-gradient(#FEFEFE, #888888);
+}
+
+.mapa-conteudo {
+    width: 940px;
+    margin: 0 auto;}
+
+.mapa p {
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+.beneficios {
+    padding: 3em 0;
+    background: #888888;
+}
+
+.conteudo-beneficios {
+    width: 640px;
+    margin: 0 auto;
+}
+
+.lista-beneficios {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.itens {
+    line-height: 1.5em;
+}
+
+.itens:nth-child(1) {/*Pode-se colocar 2n, que aí pegaria todos os elementos pares, por exemplo, e o first-child ou last-child*/
+    font-weight: bold;
+}
+
+.itens:before { /*Pode-se usar também o :after que fica para o que aparecerá depois*/
+    content: "★ ";
+}
+
+.imagem-beneficios {
+    width: 60%;
+    opacity: 1;
+    transition: 500ms;
+    box-shadow: 10px 10px 10px black;
+}
+
+.imagem-beneficios:hover {
+    opacity: 0.4;
+}
+
+.video {
+    width: 560px;
+    margin: 2em auto;
+}
+
+/*
+ img ~ p = todos os parágrafos que vem depois de uma img
+ img + p = apenas o primeiro parágrafo que vem depois de uma img
+ .principal p:not(#missao) = todos os parágrafos que não são do id missao
+*/
+
+/*
+É possível definir uma medida a partir de cálculos em vez de definir ela direto
+
+width: calc(40% - ((26px * 4) / 6);
+*/
+
+/*
+Opacidade
+
+opacity: 0.7; = vai de 0 a 1;
+*/
+
+@media screen and (max-width: 480px) { /* Tudo a partir daqui aparecerá apenas quando o usuário estiver pelo celular*/
+    .cabecalho, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+        width: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .lista-beneficios, .imagem-beneficios {
+        width: 100%;
+    }
+}
